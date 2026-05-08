@@ -1,0 +1,86 @@
+<div class="container">
+
+  <h1>Employee Management System</h1>
+
+  <div class="form-box">
+
+    <input
+      type="text"
+      placeholder="Enter Name"
+      [(ngModel)]="name"
+    />
+
+    <input
+      type="number"
+      placeholder="Enter Age"
+      [(ngModel)]="age"
+    />
+
+    <input
+      type="number"
+      placeholder="Enter Salary"
+      [(ngModel)]="salary"
+    />
+
+    <button (click)="addEmployee()">
+      Add Employee
+    </button>
+
+  </div>
+
+  <button class="toggle-btn" (click)="showDetails = !showDetails">
+
+    {{ showDetails ? 'Hide' : 'Show' }} Employee Details
+
+  </button>
+
+  <div *ngIf="showDetails">
+
+    <div
+      class="employee-card"
+      *ngFor="let emp of employees"
+      [ngClass]="{
+        'high-salary': emp.salary > 50000,
+        'medium-salary': emp.salary > 30000 && emp.salary <= 50000,
+        'low-salary': emp.salary <= 30000
+      }"
+    >
+
+      <h3>{{ emp.name }}</h3>
+
+      <p>Age: {{ emp.age }}</p>
+
+      <p>Salary: ₹{{ emp.salary }}</p>
+
+      <p>
+        Bonus:
+        ₹{{ emp.salary * 0.10 }}
+      </p>
+
+      <p *ngIf="emp.salary > 20000">
+
+        Eligible for Bonus
+
+      </p>
+
+      <div [ngSwitch]="getLevel(emp.salary)">
+
+        <p *ngSwitchCase="'High'">
+          High Level Employee
+        </p>
+
+        <p *ngSwitchCase="'Medium'">
+          Medium Level Employee
+        </p>
+
+        <p *ngSwitchDefault>
+          Low Level Employee
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

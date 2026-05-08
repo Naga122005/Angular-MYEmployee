@@ -1,0 +1,64 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+.container {
+  width: 800px;
+  margin: 30px auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-box input {
+  padding: 10px;
+  flex: 1;
+}
+
+.form-box button {
+  padding: 10px 20px;
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.toggle-btn {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.employee-card {
+  background: white;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.high-salary {
+  border-left: 8px solid green;
+}
+
+.medium-salary {
+  border-left: 8px solid orange;
+}
+
+.low-salary {
+  border-left: 8px solid red;
+}
